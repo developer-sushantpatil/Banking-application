@@ -1,9 +1,15 @@
 [build]
   publish = "public"
   functions = "netlify/functions"
+  command = "echo 'Building...'"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--prefix functions"
+
+[dev]
+  command = "npm start"
+  port = 3000
 
 [[redirects]]
   from = "/api/*"
